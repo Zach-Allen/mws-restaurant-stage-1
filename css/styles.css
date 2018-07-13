@@ -92,6 +92,12 @@ nav h1 a {
   letter-spacing: 10px;
   text-transform: uppercase;
 }
+@media screen and (max-width: 720px) {
+  nav {
+    height: 40px;
+  }
+}
+
 #breadcrumb {
   padding: 10px 40px 16px;
   list-style: none;
@@ -99,6 +105,12 @@ nav h1 a {
   font-size: 17px;
   margin: 0;
   width: calc(50% - 80px);
+}
+
+@media screen and (max-width: 720px) {
+  #breadcrumb {
+    display: none;
+  }
 }
 
 /* Display list items side by side */
@@ -138,7 +150,7 @@ nav h1 a {
   align-items: center;
 }
 .filter-options h2 {
-  padding: 1rem 1rem .5rem;
+  padding: 1rem 1rem 0.5rem;
   margin: 0;
   display: block;
   text-align: center;
@@ -184,7 +196,7 @@ nav h1 a {
   min-height: 380px;
   text-align: left;
   width: 18%;
-  box-shadow: 0 1px 10px rgba(0,0,0,.2);
+  box-shadow: 0 1px 10px rgba(0, 0, 0, 0.2);
   border-radius: 3px;
   overflow: hidden;
   display: flex;
@@ -256,23 +268,22 @@ nav h1 a {
   width: 100%;
   z-index: 1000;
 }
-.inside #map-container {
-  background: blue none repeat scroll 0 0;
-  height: 87%;
+#map-container {
+  height: 100%;
   position: fixed;
   right: 0;
-  top: 80px;
+  top: 0px;
   width: 50%;
 }
-.inside #map {
+#map {
   background-color: #ccc;
   height: 100%;
   width: 100%;
 }
-.inside #footer {
+#footer {
   bottom: 0;
   position: absolute;
-  width: 50%;
+  width: 100%;
 }
 #restaurant-name {
   color: #f18200;
@@ -287,6 +298,12 @@ nav h1 a {
 }
 #restaurant-img {
   width: 90%;
+}
+@media screen and (max-width: 720px) {
+  #restaurant-img {
+    width: 100%;
+    height: 60%;
+  }
 }
 #restaurant-address {
   font-size: 12pt;
@@ -311,6 +328,30 @@ nav h1 a {
   padding: 140px 40px 30px;
   width: 50%;
 }
+
+@media screen and (max-width: 720px) {
+  #restaurant-container {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 1rem;
+    width: 100%;
+    height: 50%;
+    position: relative;
+    justify-content: center;
+  }
+}
+@media screen and (max-width: 720px) {
+  #map-container {
+    display: flex;
+    flex-wrap: wrap;
+    background: blue;
+    width: 100%;
+    height: 60vh;
+    position: relative;
+    justify-content: center;
+  }
+}
+
 #reviews-container {
   padding: 30px 40px 80px;
 }
@@ -320,6 +361,14 @@ nav h1 a {
   font-weight: 300;
   letter-spacing: -1px;
   padding-bottom: 1pt;
+}
+
+@media screen and (max-width: 720px) {
+  #reviews-container {
+    justify-content: center;
+    width: 100%;
+    text-align: center;
+  }
 }
 #reviews-list {
   margin: 0;
@@ -345,27 +394,28 @@ nav h1 a {
 
 /* skip link */
 .skip-link {
-    left:-999px;
-    position:absolute;
-    top:auto;
-    width:1px;
-    height:1px;
-    overflow:hidden;
-    z-index:-999;
+  left: -999px;
+  position: absolute;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  z-index: -999;
 }
-.skip-link:focus, .skip-link:active {
-    color: #fff;
-    background-color:#000;
-    left: auto;
-    top: auto;
-    width: 30%;
-    height: auto;
-    overflow:auto;
-    margin: 10px 35%;
-    padding:5px;
-    border-radius: 15px;
-    border:4px solid yellow;
-    text-align:center;
-    font-size:1.2em;
-    z-index:999;
+.skip-link:focus,
+.skip-link:active {
+  color: #fff;
+  background-color: #000;
+  left: auto;
+  top: auto;
+  width: 30%;
+  height: auto;
+  overflow: auto;
+  margin: 10px 35%;
+  padding: 5px;
+  border-radius: 15px;
+  border: 4px solid yellow;
+  text-align: center;
+  font-size: 1.2em;
+  z-index: 999;
 }
